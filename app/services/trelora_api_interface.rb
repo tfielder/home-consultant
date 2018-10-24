@@ -3,7 +3,7 @@ class TreloraApiInterface
   def post(type, body)
     conn.post do |req|
       req.url build_endpoint[type]
-      req.headers = "{ 'Accept' => 'application/json' }"
+      req.headers['Accept'] =  'application/json'
       req.body = body
     end
   end
