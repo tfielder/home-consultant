@@ -9,9 +9,11 @@ describe 'TRELORA API Interface' do
   it 'should complete a successful member post' do
     VCR.use_cassette('trelora_member_post') do
       trelora = TreloraApiInterface.new
-      body = { email:    'steven@trel.co',
-               password: 'password' }
+      body = "{ 'email'  =>  'steven@trel.co',
+               'password' => 'password' }"
       member_response = trelora.post(:members, body)
+      a = JSON.parse(member_response.body)
+      binding.pry
       expect(member_response.status).to eq(200)
     end
   end

@@ -3,17 +3,15 @@ class TreloraApiInterface
   def post(type, body)
     conn.post do |req|
       req.url build_endpoint[type]
-      req.body = body.to_json
+      req.headers = "{ 'Accept' => 'application/json' }"
+      req.body = body
     end
   end
 
   private
 
   def conn
-    Faraday.new(:url => 'https://www.trylora.com/') do |faraday|
-      faraday.headers["Accept"] = 'application/json'
-      faraday.adapter  Faraday.default_adapter
-    end
+    Faraday.new(:url => 'https://www.trylora.com/')
   end
 
   def build_endpoint
