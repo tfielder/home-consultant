@@ -3,12 +3,9 @@ require 'rails_helper'
 
 describe 'user visits log in page' do
   it "can see log in page" do
-    #     As a visitor I visit the login page ('/')
     visit "/"
-    # I see the Login/Authentication Screen
-    # I see the content “Trelora Listing Consultation Tool”
+   
     expect(page).to have_content("Trelora Listing Consultation Tool")
-    # I see a form with Member Email, Password, and a button to log in.
     expect(page).to have_content("Member Email")
     expect(page).to have_content("Password")
     expect(page).to have_button("Log in")
