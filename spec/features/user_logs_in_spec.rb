@@ -20,7 +20,6 @@ describe 'user visits log in page' do
       click_on "Log in"
     end
 
-    save_and_open_page
     expect(current_path).to eq(new_search_path)
     expect(page).to have_content('Pricing Location Address')
     expect(page).to have_button('Find Location')

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  helper_method :auth_token
 
-  def current_user
-    @current_user
+  def auth_token
+    session[:user]
   end
 end
