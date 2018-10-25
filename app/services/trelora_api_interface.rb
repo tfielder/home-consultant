@@ -1,5 +1,4 @@
 class TreloraApiInterface
-
   def post(type, body)
     conn.post do |req|
       req.url build_endpoint[type]
