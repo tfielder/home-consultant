@@ -36,7 +36,7 @@ describe 'user visits log in page' do
     end
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("Invalid email/password. Please try again.")
+    expect(page).to have_content("422 error. Member does not exist! 🔐. Invalid Login. Please try again.")
     expect(page).to have_content("Trelora Listing Consultation Tool")
     expect(page).to have_content("Member Email")
     expect(page).to have_content("Password")
@@ -54,7 +54,7 @@ describe 'user visits log in page' do
     end
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("Invalid email/password. Please try again.")
+    expect(page).to have_content("422 error. Member does not exist! 🔐. Invalid Login. Please try again.")
     expect(page).to have_content("Trelora Listing Consultation Tool")
     expect(page).to have_content("Member Email")
     expect(page).to have_content("Password")

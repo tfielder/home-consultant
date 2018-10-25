@@ -1,5 +1,5 @@
 class MembersService
-  attr_reader :success
+  attr_reader :success, :response
 
   def initialize( email, password )
     @email    = email

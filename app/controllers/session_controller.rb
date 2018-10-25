@@ -9,7 +9,7 @@ class SessionController < ApplicationController
 
       redirect_to "/search/new"
     else
-      flash[:notice] = "Invalid email/password. Please try again."
+      flash[:notice] = "#{result.response[:data][:status]} error. #{result.response[:data][:error]}. Invalid Login. Please try again."
       render :new
     end
   end
