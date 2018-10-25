@@ -20,11 +20,10 @@ describe 'user visits log in page' do
       click_on "Log in"
     end
 
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content("Trelora Listing Consultation Tool")
-    expect(page).to have_content("Member Email")
-    expect(page).to have_content("Password")
-    expect(page).to have_button("Log in")
+    save_and_open_page
+    expect(current_path).to eq(new_search_path)
+    expect(page).to have_content('Pricing Location Address')
+    expect(page).to have_button('Find Location')
   end
 
   it "cannot log in a user with invalid password" do
