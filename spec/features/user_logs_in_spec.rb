@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 describe 'user visits log in page' do
   it "can see log in page" do
     visit "/"
@@ -10,13 +9,51 @@ describe 'user visits log in page' do
     expect(page).to have_content("Password")
     expect(page).to have_button("Log in")
   end
-  it "cannot log in a user with nil password" do
+
+  it "can log in a user with a correct password" do
     visit "/"
 
-    fill_in "Member Email", with: 'steven@trel.co'
-    fill_in "Password", with: ''
+    fill_in "user[address]", with: 'steven@trel.co'
+    fill_in "password", with: 'password'
 
-    click_on "Log in"
+    VCR.use_cassette('valid login') do
+      click_on "Log in"
+    end
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Trelora Listing Consultation Tool")
+    expect(page).to have_content("Member Email")
+    expect(page).to have_content("Password")
+    expect(page).to have_button("Log in")
+  end
+
+  it "cannot log in a user with invalid password" do
+    visit "/"
+
+    fill_in "user[address]", with: 'steven@trel.co'
+    fill_in "password", with: ''
+
+    VCR.use_cassette('user_without_password') do
+      click_on "Log in"
+    end
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Invalid email/password. Please try again.")
+    expect(page).to have_content("Trelora Listing Consultation Tool")
+    expect(page).to have_content("Member Email")
+    expect(page).to have_content("Password")
+    expect(page).to have_button("Log in")
+  end
+
+  it "cannot log in a user with invalid email" do
+    visit "/"
+
+    fill_in "user[address]", with: 'steven@trel.co'
+    fill_in "password", with: ''
+
+    VCR.use_cassette('user_without_password') do
+      click_on "Log in"
+    end
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Invalid email/password. Please try again.")
