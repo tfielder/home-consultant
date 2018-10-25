@@ -26,7 +26,7 @@ class MembersService
   end
 
   def parse_auth_response
-    @resposne ||= JSON.parse( send_auth.body, symbolize_names: true )
+    @response ||= JSON.parse( send_auth.body, symbolize_names: true )
   end
 
   def check_successful_authentication
