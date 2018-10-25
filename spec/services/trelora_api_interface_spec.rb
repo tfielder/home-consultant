@@ -11,6 +11,7 @@ describe 'TRELORA API Interface' do
       trelora = TreloraApiInterface.new
       body = { 'email':    'steven@trel.co',
                'password':  'password' }
+
       member_response = trelora.post(:members, body)
       parsed_response = JSON.parse(member_response.body)
       expect(member_response.status).to eq(200)
