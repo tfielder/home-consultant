@@ -48,10 +48,10 @@ describe 'user visits log in page' do
   it "cannot log in a user with invalid email" do
     visit "/"
 
-    fill_in "user[address]", with: 'steven@trel.co'
-    fill_in "password", with: ''
+    fill_in "user[address]", with: 'steven'
+    fill_in "password", with: 'password'
 
-    VCR.use_cassette('user_without_password') do
+    VCR.use_cassette('user_without_email') do
       click_on "Log in"
     end
 
