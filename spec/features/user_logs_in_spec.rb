@@ -4,10 +4,10 @@ describe 'user visits log in page' do
   it "can see log in page" do
     visit "/"
 
-    expect(page).to have_content("Trelora Listing Consultation Tool")
-    expect(page).to have_content("Member Email")
-    expect(page).to have_content("Password")
-    expect(page).to have_button("Log in")
+    expect(page).to have_content('Trelora Listing Consultation Tool')
+    expect(page).to have_content('Member Email')
+    expect(page).to have_content('Password')
+    expect(page).to have_button('Log in')
   end
 
   it "can log in a user with a correct password" do
@@ -17,7 +17,7 @@ describe 'user visits log in page' do
     fill_in "password", with: 'password'
 
     VCR.use_cassette('valid login') do
-      click_on "Log in"
+      click_on 'Log in'
     end
 
     expect(current_path).to eq(new_search_path)
@@ -32,15 +32,15 @@ describe 'user visits log in page' do
     fill_in "password", with: ''
 
     VCR.use_cassette('user_without_password') do
-      click_on "Log in"
+      click_on 'Log in'
     end
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("422 error. Member does not exist! 🔐. Invalid Login. Please try again.")
-    expect(page).to have_content("Trelora Listing Consultation Tool")
-    expect(page).to have_content("Member Email")
-    expect(page).to have_content("Password")
-    expect(page).to have_button("Log in")
+    expect(page).to have_content('422 error. Member does not exist! 🔐. Invalid Login. Please try again.')
+    expect(page).to have_content('Trelora Listing Consultation Tool')
+    expect(page).to have_content('Member Email')
+    expect(page).to have_content('Password')
+    expect(page).to have_button('Log in')
   end
 
   it "cannot log in a user with invalid email" do
@@ -50,14 +50,14 @@ describe 'user visits log in page' do
     fill_in "password", with: 'password'
 
     VCR.use_cassette('user_without_email') do
-      click_on "Log in"
+      click_on 'Log in'
     end
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content("422 error. Member does not exist! 🔐. Invalid Login. Please try again.")
-    expect(page).to have_content("Trelora Listing Consultation Tool")
-    expect(page).to have_content("Member Email")
-    expect(page).to have_content("Password")
-    expect(page).to have_button("Log in")
+    expect(page).to have_content('422 error. Member does not exist! 🔐. Invalid Login. Please try again.')
+    expect(page).to have_content('Trelora Listing Consultation Tool')
+    expect(page).to have_content('Member Email')
+    expect(page).to have_content('Password')
+    expect(page).to have_button('Log in')
   end
 end

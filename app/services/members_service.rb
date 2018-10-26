@@ -8,6 +8,10 @@ class MembersService
     @success  = authenticate
   end
 
+  def error
+    "#{@response[:data][:status]} error. #{@response[:data][:error]}. Invalid Login. Please try again."
+  end
+
   private
 
   def authenticate
