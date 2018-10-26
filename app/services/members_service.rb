@@ -1,11 +1,15 @@
 class MembersService
-  attr_reader :success
+  attr_reader :success, :response
 
   def initialize( email, password )
     @email    = email
     @password = password
     @response = nil
     @success  = authenticate
+  end
+
+  def error
+    "#{@response[:data][:status]} error. #{@response[:data][:error]}. Invalid Login. Please try again."
   end
 
   private
