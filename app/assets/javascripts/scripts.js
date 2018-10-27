@@ -5,7 +5,7 @@ $(document).ready(function() {
     var submitButtonElement = $('.log-in-submit')
 
     const invalidEmailMessage = "Please provide valid email"
-    const userAddressId = "#user_address"
+    const invalidPasswordMessage = "Please fill in the password field."
 
     passwordInputElement.on('click', function (event) {
       if (isEmail(emailInputElement.val())) {
@@ -26,22 +26,21 @@ $(document).ready(function() {
       return regex.test(email);
     }
 
-    // function setInvalidCSS(e) {
-    //   $(e).css({border})
-    // }
-    // function setMessage(e, message) {
-    //
-    // }
+    function setInvalidCSS(element) {
+      $(element).css({"border-color": "red"})
+    }
+
+    function setMessage(message) {
+      $('.message').text(message);
+    }
 
     if (!isEmail(emailInputElement.val())) {
-      $('.message').text('Please provide valid email.');
-      $("#user_address").css({"border-color": "red"});
-      // setMessage(userAddressId, invalidEmailMessage)
-      // setInvalidCSS(userAddressId)
+      setInvalidCSS(emailInputElement)
+      setMessage(invalidEmailMessage)
       event.preventDefault();
     } else if (passwordInputElement.val() === '') {
-      $('.message').text('Please fill in the password field.');
-      $("#password").css({"border-color": "red"});
+      setInvalidCSS(passwordInputElement)
+      setMessage(invalidPasswordMessage)
       event.preventDefault();
     } else {}
   });
