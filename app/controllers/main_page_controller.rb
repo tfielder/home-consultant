@@ -1,5 +1,5 @@
 class MainPageController < ApplicationController
-  def show
-    
+  def index
+
   end
 end
