@@ -9,7 +9,7 @@ describe 'Property Service' do
       property_service = PropertyService.new( address, auth_token )
 
       expect(property_service.client).to be_a(Client)
-#      expect(property_service.pricing_estimates).to be_a(PricingEstimates)
+      expect(property_service.pricing_estimates).to be_a(PricingEstimates)
 #      expect(property_service.listing).to be_a(Listing)
     end
   end

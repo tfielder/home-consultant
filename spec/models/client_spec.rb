@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'CLient Model' do
-  it 'should create_a_client' do
+  it 'should create a client' do
     name         = 'Tyler Long'
     email        = 'tyler+12@trelora.com'
     phone        = '3033333333'
@@ -35,6 +35,5 @@ describe 'CLient Model' do
     expect( client.timing       ).to eq( timing )
     expect( client.adopter_type ).to eq( adopter_type )
     expect( client.stage        ).to eq( stage )
-
   end
 end
