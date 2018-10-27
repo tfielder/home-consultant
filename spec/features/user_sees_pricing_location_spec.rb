@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'as a user' do
   describe 'visiting the pricing location screen' do
     it 'shows the pricing location details' do
-      visit ''
+      visit '/main_page'
 
       expect(page).to have_content("Name:")
       expect(page).to have_content("Email:")
