@@ -10,7 +10,7 @@ describe 'Property Service' do
 
       expect(property_service.client).to be_a(Client)
       expect(property_service.pricing_estimates).to be_a(PricingEstimates)
-#      expect(property_service.listing).to be_a(Listing)
+      expect(property_service.listing).to be_a(Listing)
     end
   end
 end
