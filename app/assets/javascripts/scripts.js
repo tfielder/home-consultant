@@ -1,3 +1,5 @@
-$('.log-in-submit').on('click', function () {
-  $("#user_address").css({"border-color": "red"});
+$(document).ready(function() {
+  $('.log-in-submit').on('click', function () {
+    $("#user_address").css({"border-color": "red"});
+  });
 });
