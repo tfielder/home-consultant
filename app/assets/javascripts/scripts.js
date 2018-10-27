@@ -1,5 +1,9 @@
 $(document).ready(function() {
   $('.log-in-submit').on('click', function () {
-    $("#user_address").css({"border-color": "red"});
+    var input = $('#user_address').val();
+    if (input === '') {
+      $('.message').text('Invalid Email');
+      $("#user_address").css({"border-color": "red"});
+    }
   });
 });
