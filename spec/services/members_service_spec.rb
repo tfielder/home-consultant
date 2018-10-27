@@ -11,7 +11,7 @@ describe 'Member Service' do
       expect(member_auth.success).to eq( "this_is_a_very_simple_auth_token_string" )
     end
   end
-  it 'should make a fauled post' do
+  it 'should make a failed post' do
     VCR.use_cassette( 'trelora_failed_member_post' ) do
       member_email    = 'steven@trel.co'
       member_password = 'wrong_password'
