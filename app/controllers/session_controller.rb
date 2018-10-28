@@ -8,7 +8,7 @@ class SessionController < ApplicationController
       session[:user] = result.success
       redirect_to '/search/new'
     else
-      flash[:notice] = result.error
+      flash.now[:error] = result.error
       render :new
     end
   end
