@@ -3,7 +3,11 @@
 <%= form_tag("/", method: "post") do %>
   <%= label_tag(:member_email, "Member Email") %>
   <%= email_field(:user, :address) %>
+
   <%= label_tag(:password) %>
   <%= password_field_tag(:password) %>
-  <%= submit_tag("Log in") %>
+  
+  <%= submit_tag("Log in", class: "log-in-submit") %>
+
+  <p class="message"></p>
 <% end %>
