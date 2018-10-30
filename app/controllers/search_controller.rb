@@ -4,7 +4,11 @@ class SearchController < ApplicationController
   end
 
   def create
+    address = AddressFormatter.new(params[:address]).formatter
+
     require "pry"; binding.pry
-    af = AddressFormatter.new(params[:address]).formatter
+    api_call = PropertyService.new(address, auth_token)
+
+
   end
 end
