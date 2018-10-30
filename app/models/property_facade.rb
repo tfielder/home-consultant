@@ -30,7 +30,27 @@ class PropertyFacade
       "Yes"
     else
       "No"
-    end 
+    end
+  end
+
+  def found_us
+    @attributes[:result][:client][:found_us]
+  end
+
+  def zestimate
+    @attributes[:result][:pricing_estimates][:zillow][:zestimate]
+  end
+
+  def z_low
+    @attributes[:result][:pricing_estimates][:zillow][:low]
+  end
+
+  def z_high
+    @attributes[:result][:pricing_estimates][:zillow][:high]
+  end
+
+  def hj_low
+    @attributes[:result][:pricing_estimates][:home_junction][:low]
   end
 
 
