@@ -25,6 +25,14 @@ class PropertyFacade
     "Lat: #{lat}, Long: #{long}"
   end
 
+  def opted_in
+    if @attributes[:result][:client][:opted_in][:result]
+      "Yes"
+    else
+      "No"
+    end 
+  end
+
 
 
 
