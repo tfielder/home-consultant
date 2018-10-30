@@ -49,13 +49,14 @@ class AddressFormatter
     first_piece.concat("-").concat(second_piece)
   end
 
-  def street_type
-    typo = @parsed.street_type.downcase
-    typo = street_hash[typo] if street_hash.keys.include? typo
-  end
+  private
+    def street_type
+      typo = @parsed.street_type.downcase
+      typo = street_hash[typo] if street_hash.keys.include? typo
+    end
 
-  def street_prefix
-    pre = @parsed.prefix.downcase
-    pre = cardinal_abbv[pre] if cardinal_abbv.keys.include? pre
-  end
+    def street_prefix
+      pre = @parsed.prefix.downcase
+      pre = cardinal_abbv[pre] if cardinal_abbv.keys.include? pre
+    end
 end
