@@ -13,14 +13,14 @@ describe 'AddressFormatter Service' do
     address_4 = "1860 South Marion ST Denver, Colorado 80210"
 
 
-    af_1 = AddressFormatter.new(address_1).format
-    af_2 = AddressFormatter.new(address_2).format
-    af_3 = AddressFormatter.new(address_3).format
-    af_4 = AddressFormatter.new(address_4).format
+    af_1 = AddressFormatter.new(address_1).formatter
+    af_2 = AddressFormatter.new(address_2).formatter
+    af_3 = AddressFormatter.new(address_3).formatter
+    af_4 = AddressFormatter.new(address_4).formatter
 
-    formatted_1 = "1200_e_wilmox_street-Denver-CO-90210"
+    formatted_1 = "1200_east_wilmox_street-Denver-CO-90210"
     formatted_2 = "20_west_hammock_place-Appomattox-VA-90210"
-    formatted_3 = "1200_e_wilmox_parkway-Sandstone-TX-90210"
+    formatted_3 = "1200_east_wilmox_parkway-Sandstone-TX-90210"
     formatted_4 = "1860_south_marion_street-Denver-CO-80210"
 
 
