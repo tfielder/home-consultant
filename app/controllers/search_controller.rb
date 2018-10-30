@@ -9,7 +9,6 @@ class SearchController < ApplicationController
     api_call = PropertyService.new(address, auth_token)
 
     pf = PropertyFacade.new(api_call.response)
-    require "pry"; binding.pry
 
 
   end
