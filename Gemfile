@@ -38,6 +38,7 @@ gem 'figaro'
 gem 'faraday'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'StreetAddress', :require => "street_address"
 
 
 group :development, :test do
