@@ -1,6 +1,7 @@
 class PropertyService
   attr_reader :client,
-              :pricing_estimates
+              :pricing_estimates,
+              :listing
 
   def initialize( address, auth_token )
     @address           = address
@@ -8,7 +9,7 @@ class PropertyService
     @response          = parse_response
     @client            = build_client
     @pricing_estimates = build_pricing
-    @listing           = nil
+    @listing           = build_listing
   end
 
   private
@@ -29,10 +30,14 @@ class PropertyService
   end
 
   def build_client
-    @client = Client.new(@response[:client])
+    Client.new(@response[:client])
   end
 
   def build_pricing
-    @pricing_esimates = PricingEstimates.new(@response[:pricing_estimates])
+    PricingEstimates.new(@response[:pricing_estimates])
+  end
+
+  def build_listing
+    Listing.new(@response[:listing])
   end
 end

@@ -36,6 +36,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Our Additions
 gem 'figaro'
 gem 'faraday'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 
 group :development, :test do
