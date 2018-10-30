@@ -53,6 +53,37 @@ class PropertyFacade
     @attributes[:result][:pricing_estimates][:home_junction][:low]
   end
 
+  def hj_high
+    @attributes[:result][:pricing_estimates][:home_junction][:high]
+  end
+
+  def hj_avg
+    @attributes[:result][:pricing_estimates][:home_junction][:regional_avg]
+  end
+
+  def enthusiasm
+    @attributes[:result][:client][:enthusiasm]
+  end
+
+  def timing
+    @attributes[:result][:client][:timing]
+  end
+
+  def adopted_type
+    @attributes[:result][:client][:adopter_type]
+  end
+
+  def updates
+    @attributes[:result][:listing][:home_updates].values
+  end
+
+  def stage
+    @attributes[:result][:client][:stage]
+  end
+
+  def retainer
+    500
+  end
 
 
 
