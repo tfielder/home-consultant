@@ -84,3 +84,11 @@ input[type=password]:focus {
   height: 40px;
   border-radius: 20px;
 }
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.05);
+}
