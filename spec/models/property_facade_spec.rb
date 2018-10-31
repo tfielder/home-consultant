@@ -82,8 +82,8 @@ describe PropertyFacade, type: :model do
       expect(@property_facade.stage).to eq("Just getting interested in prepping home for sale. Wants to sell and use $$ to buy with us as well.")
     end
 
-    xit '#retainer' do
-      500
+    it '#retainer' do
+      expect(@property_facade.retainer).to eq(500)
     end
   end
 end
