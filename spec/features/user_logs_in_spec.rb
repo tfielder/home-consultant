@@ -4,7 +4,7 @@ describe 'user visits log in page' do
   it 'can see log in page' do
     visit '/'
 
-    expect(page).to have_content('Trelora Home Consultant')
+    expect(page).to have_content('Home Consultant')
     expect(page).to have_content('Member Email')
     expect(page).to have_content('Password')
     expect(page).to have_button('Log in')
@@ -39,7 +39,7 @@ describe 'user visits log in page' do
     expect(page).to have_content(
       '422 error. Member does not exist! 🔐. Invalid Login. Please try again.'
     )
-    expect(page).to have_content('Trelora Home Consultant')
+    expect(page).to have_content('Home Consultant')
     expect(page).to have_content('Member Email')
     expect(page).to have_content('Password')
     expect(page).to have_button('Log in')
@@ -59,7 +59,7 @@ describe 'user visits log in page' do
     expect(page).to have_content(
       '422 error. Member does not exist! 🔐. Invalid Login. Please try again.'
     )
-    expect(page).to have_content('Trelora Home Consultant')
+    expect(page).to have_content('Home Consultant')
     expect(page).to have_content('Member Email')
     expect(page).to have_content('Password')
     expect(page).to have_button('Log in')
