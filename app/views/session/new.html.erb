@@ -1,13 +1,28 @@
-<h1>Trelora Listing Consultation Tool</h1>
+<%= image_tag("TRELORA-Logo-.png", class: "center zoom")%>
 
-<%= form_tag("/", method: "post") do %>
-  <%= label_tag(:member_email, "Member Email") %>
-  <%= email_field(:user, :address) %>
+<div class="header-text">
+  <h3><b>Home Consultant</b></h3>
+</div>
 
-  <%= label_tag(:password) %>
-  <%= password_field_tag(:password) %>
-  
-  <%= submit_tag("Log in", class: "log-in-submit") %>
+<div class="log-in-form">
+  <%= form_tag("/", method: "post") do %>
+    <div class="label">
+      <%= label_tag(:member_email, "Member Email") %>
+    </div>
+    <div class="input-field">
+      <%= email_field(:user, :address) %>
+    </div>
+    <div class="label">
+      <%= label_tag(:password) %>
+    </div>
+    <div class="input-field">
+      <%= password_field_tag(:password) %>
+    </div>
+
+    <div class="submit-button">
+      <%= submit_tag("Log in", class: "log-in-submit") %>
+    </div>
 
   <p class="message"></p>
-<% end %>
+  <% end %>
+</div>

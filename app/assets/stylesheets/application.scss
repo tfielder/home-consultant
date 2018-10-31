@@ -1,6 +1,101 @@
 @import 'bootstrap';
+@supports (transition: initial) {
+  transition: width 0.4s ease-in-out;
+}
+
+html, body {
+  background-image: url("Green Swoops.png");
+  background-position: left bottom;
+  background-size: cover;
+  height: 100%;
+}
 
 .message {
   color: red;
   margin-top: 15px;
+  text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  padding: 40px 30px 30px 30px;
+}
+
+.log-in-form {
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-text {
+  text-align: center;
+  font-family: 'Questrial', sans-serif;
+  padding: 30px;
+  color: #96C93D;
+}
+
+.input-field {
+  text-align: center;
+  padding: 10px;
+}
+
+.label {
+  text-align: center;
+  margin: 0px;
+}
+
+.submit-button {
+  // outline: none;
+  text-align: center;
+  padding: 30px;
+}
+
+input[type=email] {
+  background-color: #d6d6d6;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+input[type=password] {
+  background-color: #d6d6d6;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+input[type=email]:focus {
+  outline: none;
+  border: 2px solid #96C93D;
+  padding-left: 12px;
+  color: #000000;
+}
+
+input[type=password]:focus {
+  outline: none;
+  border: 2px solid #96C93D;
+  padding-left: 12px;
+  color: #000000;
+}
+
+input[type=submit]:focus {
+  outline: none;
+  border: 2px solid #96C93D;
+}
+
+.log-in-submit {
+  color: #96C93D;
+  background-color: #000000;
+  width: 90px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  transform: scale(1.05);
 }
