@@ -74,8 +74,8 @@ describe PropertyFacade, type: :model do
       expect(@property_facade.adopted_type).to eq("Early Adopter")
     end
 
-    xit '#updates' do
-      expect(@property_facade).to eq("Tyler Long")
+    it '#updates' do
+      expect(@property_facade.updates).to eq(["New Roof in 07/15", "Basement Updated and Finished 8/2016"])
     end
 
     xit '#stage' do
