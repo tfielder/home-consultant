@@ -55,26 +55,33 @@ input[type=email] {
   background-color: #d6d6d6;
   color: white;
   border-radius: 15px;
+  text-align: center;
 }
 
 input[type=password] {
   background-color: #d6d6d6;
   color: white;
   border-radius: 15px;
+  text-align: center;
 }
 
 input[type=email]:focus {
   outline: none;
-  border: 3px solid #96C93D;
+  border: 2px solid #96C93D;
   padding-left: 12px;
   color: #000000;
 }
 
 input[type=password]:focus {
   outline: none;
-  border: 3px solid #96C93D;
+  border: 2px solid #96C93D;
   padding-left: 12px;
   color: #000000;
+}
+
+input[type=submit]:focus {
+  outline: none;
+  border: 2px solid #96C93D;
 }
 
 .log-in-submit {
