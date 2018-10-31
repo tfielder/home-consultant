@@ -70,8 +70,8 @@ describe PropertyFacade, type: :model do
       expect(@property_facade.timing).to eq("Less than 2 Months")
     end
 
-    xit '#adopted_type' do
-      expect(@property_facade).to eq("Tyler Long")
+    it '#adopted_type' do
+      expect(@property_facade.adopted_type).to eq("Early Adopter")
     end
 
     xit '#updates' do
