@@ -14,12 +14,4 @@ class MainPageController < ApplicationController
   def prepare
     @property_facade
   end
-
-  def collect
-
-  end
-
-  def wow
-
-  end
 end
