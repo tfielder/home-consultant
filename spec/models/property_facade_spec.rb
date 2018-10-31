@@ -58,16 +58,16 @@ describe PropertyFacade, type: :model do
       expect(@property_facade.hj_high).to eq(679000)
     end
 
-    xit '#hj_avg' do
-      expect(@property_facade).to eq(679000)
+    it '#hj_avg' do
+      expect(@property_facade.hj_avg).to eq(689000)
     end
 
-    xit '#enthusiasm' do
-      expect(@property_facade).to eq("Tyler Long")
+    it '#enthusiasm' do
+      expect(@property_facade.enthusiasm).to eq("Interested in Moving Forward")
     end
 
-    xit '#timing' do
-      expect(@property_facade).to eq("Tyler Long")
+    it '#timing' do
+      expect(@property_facade.timing).to eq("Less than 2 Months")
     end
 
     xit '#adopted_type' do
