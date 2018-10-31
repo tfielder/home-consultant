@@ -4,7 +4,7 @@ $(document).ready(function() {
     var passwordInputElement = $('#password')
     var submitButtonElement = $('.log-in-submit')
 
-    const invalidEmailMessage = "Please provide valid email"
+    const invalidEmailMessage = "Please provide a valid email."
     const invalidPasswordMessage = "Please fill in the password field."
 
     passwordInputElement.on('click', function (event) {
