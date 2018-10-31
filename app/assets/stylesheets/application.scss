@@ -1,4 +1,7 @@
 @import 'bootstrap';
+@supports (transition: initial) {
+  transition: width 0.4s ease-in-out;
+}
 
 .message {
   color: red;
@@ -26,17 +29,53 @@
 .header-text {
   text-align: center;
   font-family: 'Questrial', sans-serif;
+  padding: 30px;
 }
 
 .input-field {
   text-align: center;
+  padding: 10px;
 }
 
 .label {
   text-align: center;
+  margin: 0px;
 }
 
 .submit-button {
   text-align: center;
   padding: 30px;
+}
+
+input[type=email] {
+  background-color: #d6d6d6;
+  color: white;
+  border-radius: 15px;
+}
+
+input[type=password] {
+  background-color: #d6d6d6;
+  color: white;
+  border-radius: 15px;
+}
+
+input[type=email]:focus {
+  outline: none;
+  border: 3px solid #96C93D;
+  padding-left: 12px;
+  width: 60%;
+}
+
+input[type=password]:focus {
+  outline: none;
+  border: 3px solid #96C93D;
+  padding-left: 12px;
+}
+
+.log-in-submit {
+  color: #96C93D;
+  background-color: #000000;
+  width: 90px;
+  height: 40px;
+  border-radius: 20px;
 }
