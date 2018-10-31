@@ -78,8 +78,8 @@ describe PropertyFacade, type: :model do
       expect(@property_facade.updates).to eq(["New Roof in 07/15", "Basement Updated and Finished 8/2016"])
     end
 
-    xit '#stage' do
-      expect(@property_facade).to eq("Tyler Long")
+    it '#stage' do
+      expect(@property_facade.stage).to eq("Just getting interested in prepping home for sale. Wants to sell and use $$ to buy with us as well.")
     end
 
     xit '#retainer' do
