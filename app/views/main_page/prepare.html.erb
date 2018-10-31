@@ -4,7 +4,7 @@
 <h2 class="field_headers">Name: <%= @property_facade.name %></h2>
 <h2 class="field_headers">Email: <%= @property_facade.email  %> </h2>
 <h2 class="field_headers">Phone: <%= @property_facade.phone  %> </h2>
-<h2 class="field_headers">Map: <%= @property_facade.map %> </h2>
+<h2 class="field_headers">Map: <a href="<%= @property_facade.map %>">Click for a Google Map</a> </h2>
 <h2 class="field_headers">Opted In: <%= @property_facade.opted_in %> </h2>
 <h2 class="field_headers">Found Us: <%= @property_facade.found_us %> </h2>
 <h2 class="field_headers">Estimate: </h2>
@@ -20,8 +20,8 @@
 <h2 class="field_headers">Timing: <%= @property_facade.timing %> </h2>
 <h2 class="field_headers">Adopter Type: <%= @property_facade.adopter_type %> </h2>
 <h2 class="field_headers">Updates: <% @property_facade.updates.each do |update| %> </h2>
-                                   <h3 class="update"> <%= update %> </h3>
-                                   <% end %>
+  <h3 class="update"> <%= update %> </h3>
+<% end %>
 <h2 class="field_headers">Stage: <%= @property_facade.stage %> </h2>
 <h2 class="field_headers">Retainer: <%= @property_facade.retainer %> </h2>
 </div>
