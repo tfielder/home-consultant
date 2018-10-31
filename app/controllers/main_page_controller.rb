@@ -1,7 +1,7 @@
 class MainPageController < ApplicationController
 
   def search
-    
+
   end
 
   def create
@@ -13,5 +13,9 @@ class MainPageController < ApplicationController
 
   def prepare
     @property_facade
+  end
+
+  def collect
+    
   end
 end
