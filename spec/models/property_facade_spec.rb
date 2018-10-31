@@ -71,7 +71,7 @@ describe PropertyFacade, type: :model do
     end
 
     it '#adopted_type' do
-      expect(@property_facade.adopted_type).to eq("Early Adopter")
+      expect(@property_facade.adopter_type).to eq("Early Adopter")
     end
 
     it '#updates' do
