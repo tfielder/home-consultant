@@ -73,7 +73,7 @@ class PropertyFacade
     @attributes[:result][:client][:timing]
   end
 
-  def adopted_type
+  def adopter_type
     @attributes[:result][:client][:adopter_type]
   end
 

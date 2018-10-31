@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'session#new'
   post '/', to: 'session#create'
-  resources :search, only: [:new, :create]
-  resources :main_page, only: [:index]
+  post '/main_page', to: 'main_page#create'
+  resources :main_page, only: [:create, :index, :prepare]
 end
