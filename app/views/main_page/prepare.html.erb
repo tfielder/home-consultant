@@ -1,0 +1,27 @@
+<h1>Address</h1>
+
+<div class="address_preparation">
+<h2 class="field_headers">Name: <%= @property_facade.name %></h2>
+<h2 class="field_headers">Email: <%= @property_facade.email  %> </h2>
+<h2 class="field_headers">Phone: <%= @property_facade.phone  %> </h2>
+<h2 class="field_headers">Map: <%= @property_facade.map %> </h2>
+<h2 class="field_headers">Opted In: <%= @property_facade.opted_in %> </h2>
+<h2 class="field_headers">Found Us: <%= @property_facade.found_us %> </h2>
+<h2 class="field_headers">Estimate: </h2>
+<h3 class="estimate_header">Zillow</h3>
+<h3 class="estimates">Zestimate: <%= @property_facade.zestimate %> </h3>
+<h3 class="estimates">Low: <%= @property_facade.z_low %> </h3>
+<h3 class="estimates">High: <%= @property_facade.z_high %> </h3>
+<h3 class="estimate_header">Home Junction</h3>
+<h3 class="estimates">Low: <%= @property_facade.hj_low %> </h3>
+<h3 class="estimates">High: <%= @property_facade.hj_high %> </h3>
+<h3 class="estimates">Regional Avg: <%= @property_facade.hj_avg %> </h3>
+<h2 class="field_headers">Enthusiasm: <%= @property_facade.enthusiasm %> </h2>
+<h2 class="field_headers">Timing: <%= @property_facade.timing %> </h2>
+<h2 class="field_headers">Adopter Type: <%= @property_facade.adopter_type %> </h2>
+<h2 class="field_headers">Updates: <%= @property_facade.updates.each do |update| %> </h2>
+                                   <h3 class="update"> <%= update %> </h3>
+                                   <% end %>
+<h2 class="field_headers">Stage: <%= @property_facade.stage %> </h2>
+<h2 class="field_headers">Retainer: <%= @property_facade.retainer %> </h2>
+</div>

@@ -1,17 +1,15 @@
-<h1>Address</h1>
+<% if !@property_facade #search address button active%>
+<h1>Pricing Location Address</h1>
 
-<div class="address_preparation">
-<h2 class="field_headers">Name:</h2>
-<h2 class="field_headers">Email:</h2>
-<h2 class="field_headers">Phone:</h2>
-<h2 class="field_headers">Map:</h2>
-<h2 class="field_headers">Opted In:</h2>
-<h2 class="field_headers">Found Us:</h2>
-<h2 class="field_headers">Estimate:</h2>
-<h2 class="field_headers">Enthusiasm:</h2>
-<h2 class="field_headers">Timing:</h2>
-<h2 class="field_headers">Adopter Type:</h2>
-<h2 class="field_headers">Updates:</h2>
-<h2 class="field_headers">Stage:</h2>
-<h2 class="field_headers">Retainer:</h2>
-</div>
+<%= form_tag("/main_page", method: "post") do %>
+  <%= label_tag(:location_address, "Location Address") %>
+  <%= text_field_tag(:address) %>
+
+  <%= submit_tag("Find Location") %>
+<% end %>
+
+<% else #if prepare button active%>
+
+<% #else #if prepare button active %>
+
+<% end %>
