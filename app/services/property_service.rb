@@ -1,7 +1,7 @@
 class PropertyService
   attr_reader :client,
               :pricing_estimates,
-              :listing
+              :listing, :response
 
   def initialize( address, auth_token )
     @address           = address
