@@ -23,7 +23,7 @@ describe PropertyFacade, type: :model do
     end
 
     it '#phone' do
-      expect(@property_facade.phone).to eq("3033333333")
+      expect(@property_facade.phone).to eq("(303)333-3333")
     end
 
     it '#map' do
@@ -39,27 +39,27 @@ describe PropertyFacade, type: :model do
     end
 
     it '#zestimate' do
-      expect(@property_facade.zestimate).to eq(704000)
+      expect(@property_facade.zestimate).to eq("$704,000")
     end
 
     it '#z_low' do
-      expect(@property_facade.z_low).to eq(696000)
+      expect(@property_facade.z_low).to eq("$696,000")
     end
 
     it '#z_high' do
-      expect(@property_facade.z_high).to eq(754000)
+      expect(@property_facade.z_high).to eq("$754,000")
     end
 
     it '#hj_low' do
-      expect(@property_facade.hj_low).to eq(578000)
+      expect(@property_facade.hj_low).to eq("$578,000")
     end
 
     it '#hj_high' do
-      expect(@property_facade.hj_high).to eq(679000)
+      expect(@property_facade.hj_high).to eq("$679,000")
     end
 
     it '#hj_avg' do
-      expect(@property_facade.hj_avg).to eq(689000)
+      expect(@property_facade.hj_avg).to eq("$689,000")
     end
 
     it '#enthusiasm' do

@@ -14,7 +14,7 @@ class PropertyFacade
   end
 
   def phone
-    @attributes[:result][:client][:client_info][:phone]
+    @attributes[:result][:client][:client_info][:phone].insert(0, '(').insert(4, ')').insert(8, '-')
   end
 
   def map
@@ -36,28 +36,33 @@ class PropertyFacade
     @attributes[:result][:client][:found_us]
   end
 
+  def dollars(num)
+    sprintf('%.2f',num).gsub('.00','').reverse.scan(/(\d*\.\d{1,3}|\d{1,3})/).join(',').reverse.prepend('$')
+  end
+
   def zestimate
-    @attributes[:result][:pricing_estimates][:zillow][:zestimate]
+    dollars (@attributes[:result][:pricing_estimates][:zillow][:zestimate])
+
   end
 
   def z_low
-    @attributes[:result][:pricing_estimates][:zillow][:low]
+    dollars(@attributes[:result][:pricing_estimates][:zillow][:low])
   end
 
   def z_high
-    @attributes[:result][:pricing_estimates][:zillow][:high]
+    dollars(@attributes[:result][:pricing_estimates][:zillow][:high])
   end
 
   def hj_low
-    @attributes[:result][:pricing_estimates][:home_junction][:low]
+    dollars(@attributes[:result][:pricing_estimates][:home_junction][:low])
   end
 
   def hj_high
-    @attributes[:result][:pricing_estimates][:home_junction][:high]
+    dollars(@attributes[:result][:pricing_estimates][:home_junction][:high])
   end
 
   def hj_avg
-    @attributes[:result][:pricing_estimates][:home_junction][:regional_avg]
+    dollars(@attributes[:result][:pricing_estimates][:home_junction][:regional_avg])
   end
 
   def enthusiasm
