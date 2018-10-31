@@ -1,9 +1,8 @@
 class PropertyFacade
+  attr_reader :name
 
   def initialize(attributes)
-
     @attributes = attributes
-    require "pry"; binding.pry
   end
 
   def name
