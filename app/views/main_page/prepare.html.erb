@@ -19,7 +19,7 @@
 <h2 class="field_headers">Enthusiasm: <%= @property_facade.enthusiasm %> </h2>
 <h2 class="field_headers">Timing: <%= @property_facade.timing %> </h2>
 <h2 class="field_headers">Adopter Type: <%= @property_facade.adopter_type %> </h2>
-<h2 class="field_headers">Updates: <%= @property_facade.updates.each do |update| %> </h2>
+<h2 class="field_headers">Updates: <% @property_facade.updates.each do |update| %> </h2>
                                    <h3 class="update"> <%= update %> </h3>
                                    <% end %>
 <h2 class="field_headers">Stage: <%= @property_facade.stage %> </h2>
