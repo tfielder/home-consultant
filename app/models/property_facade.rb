@@ -22,6 +22,7 @@ class PropertyFacade
     lat = array[1]
     long = array[3]
     "Lat: #{lat}, Long: #{long}"
+    "https://www.google.com/maps/place/#{lat},#{long}"
   end
 
   def opted_in
