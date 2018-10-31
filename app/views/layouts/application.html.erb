@@ -15,9 +15,11 @@
   <body>
     <%= yield %>
 
-    <% flash.each do |type, message| %>
-    <%= content_tag :div, sanitize(message), class: type %>
-    <% end %>
+    <div class="flash">
+      <% flash.each do |type, message| %>
+      <%= content_tag :div, sanitize(message), class: type %>
+      <% end %>
+    </div>
 
     <script src="/assets/javascripts/scripts.js"></script>
   </body>

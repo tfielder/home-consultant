@@ -4,7 +4,7 @@
 }
 
 html, body {
-  background-image: url("Green Swoops.png");
+  background-image: url("GreenSwoops.png");
   background-position: left bottom;
   background-size: cover;
   height: 100%;
@@ -98,4 +98,8 @@ input[type=submit]:focus {
 
 .zoom:hover {
   transform: scale(1.05);
+}
+
+.flash {
+  text-align: center;
 }
