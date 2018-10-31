@@ -16,6 +16,10 @@ class MainPageController < ApplicationController
   end
 
   def collect
-    
+
+  end
+
+  def wow
+
   end
 end

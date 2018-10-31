@@ -1,17 +1,17 @@
-<%= form_tag("/something", method: "post") do %>
+<%= form_tag("/main_page", method: "post") do %>
   <%= label_tag(:about_the_home, "About The Home") %>
   <%= text_field_tag(:about) %>
   <%= label_tag(:recommended_price, "Recommended List Price") %>
   <%= text_field_tag(:recommended_price) %>
   <%= label_tag(:update_enthusiasm, "Update Client Enthusiasm") %>
-  <%= options_for_select(:update_enthusiasm, [['mild', 1], ['medium', 2], ['spicy', 3]]) %>
+  <%= options_for_select([['mild', 1], ['medium', 2], ['spicy', 3]]) %>
   <%= label_tag(:buyer_agent_comm, "Buyer Agent Commission") %>
   <%= text_field_tag(:commission) %>
   <%= label_tag(:about_the_seller, "About the Seller") %>
   <%= text_field_tag(:about_seller) %>
   <%= label_tag(:credit_number, "Credit Card Number") %>
-  <%= hidden_field(:cc_number) %>
+  <%= hidden_field(:cc_number, "16") %>
   <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
-  <%= date_field(:cc_expiration) %>
+  <%= date_field(:cc_expiration_month, :cc_expires_year) %>
   <%= submit_tag("Finish") %>
 <% end %>
