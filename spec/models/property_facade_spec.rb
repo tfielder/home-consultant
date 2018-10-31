@@ -27,7 +27,7 @@ describe PropertyFacade, type: :model do
     end
 
     it '#map' do
-      array = expect(@property_facade.map).to eq("Lat: 39.683019, Long: -104.971964")
+      array = expect(@property_facade.map).to eq("https://www.google.com/maps/place/39.683019,-104.971964")
     end
 
     it '#opted_in' do
