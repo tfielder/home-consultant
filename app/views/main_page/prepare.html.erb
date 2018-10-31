@@ -39,9 +39,9 @@
   <%= label_tag(:about_the_seller, "About the Seller") %>
   <%= text_area_tag(:about_seller) %>
   <%= label_tag(:credit_number, "Credit Card Number") %>
-  <%= hidden_field(:cc_number, "16") %>
+  <%= password_field_tag(:cc_number) %>
   <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
-  <%= date_field(:cc_expiration_month, :cc_expires_year) %>
+  <%= month_field(:cc_expiration_month, :cc_expires_year) %>
   <%= submit_tag("Finish") %>
 <% end %>
 </div>
