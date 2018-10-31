@@ -13,8 +13,10 @@ class PropertyFacade
     @attributes[:result][:client][:client_info][:email]
   end
 
+
+
   def phone
-    @attributes[:result][:client][:client_info][:phone]
+    @attributes[:result][:client][:client_info][:phone].insert(0, '(').insert(4, ')').insert(8, '-')
   end
 
   def map

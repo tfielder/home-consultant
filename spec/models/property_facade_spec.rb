@@ -23,7 +23,7 @@ describe PropertyFacade, type: :model do
     end
 
     it '#phone' do
-      expect(@property_facade.phone).to eq("3033333333")
+      expect(@property_facade.phone).to eq("(303)333-3333")
     end
 
     it '#map' do
