@@ -1,7 +1,7 @@
 class MainPageController < ApplicationController
 
   def search
-
+    
   end
 
   def create
