@@ -1,31 +1,57 @@
-<div class="header-text">
-  <h3><b>Client Details</b></h3>
-</div>
-
 <div class="address_preparation">
+  <div class="header-text">
+    <h3><b>Client Details</b></h3>
+  </div>
   <p class="field_headers">Name: <%= @property_facade.name %></p>
   <p class="field_headers">Email: <%= @property_facade.email  %> </p>
   <p class="field_headers">Phone: <%= @property_facade.phone  %> </p>
-  <p class="field_headers">Map: <a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>
   <p class="field_headers">Opted In: <%= @property_facade.opted_in %> </p>
   <p class="field_headers">Found Us: <%= @property_facade.found_us %> </p>
-  <p class="field_headers">Estimate: </p>
-  <p class="estimate_header">Zillow</p>
-  <p class="estimates">Zestimate: <%= @property_facade.zestimate %> </p>
-  <p class="estimates">Low: <%= @property_facade.z_low %> </p>
-  <p class="estimates">High: <%= @property_facade.z_high %> </p>
-  <p class="estimate_header">Home Junction</p>
-  <p class="estimates">Low: <%= @property_facade.hj_low %> </p>
-  <p class="estimates">High: <%= @property_facade.hj_high %> </p>
-  <p class="estimates">Regional Avg: <%= @property_facade.hj_avg %> </p>
-  <p class="field_headers">Enthusiasm: <%= @property_facade.enthusiasm %> </p>
-  <p class="field_headers">Timing: <%= @property_facade.timing %> </p>
-  <p class="field_headers">Adopter Type: <%= @property_facade.adopter_type %> </p>
-  <p class="field_headers">Updates: <% @property_facade.updates.each do |update| %> </p>
-    <p class="update"> <%= update %> </p>
-  <% end %>
-  <p class="field_headers">Stage: <%= @property_facade.stage %> </p>
-  <p class="field_headers">Retainer: <%= @property_facade.retainer %> </p>
+  <p class="field_headers">Map: <a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>
+</div>
+
+<div class="estimate-types">
+  <div class="header-text">
+    <h3 class="field_headers"><b>Estimates</b></h3>
+  </div>
+  <div class="zillow-block">
+    <p class="estimate_header">Zillow</p>
+    <p class="estimates">Zestimate: <%= @property_facade.zestimate %> </p>
+    <p class="estimates">Low: <%= @property_facade.z_low %> </p>
+    <p class="estimates">High: <%= @property_facade.z_high %> </p>
+  </div>
+  <div class="home-junction-block">
+    <p class="estimate_header">Home Junction</p>
+    <p class="estimates">Low: <%= @property_facade.hj_low %> </p>
+    <p class="estimates">High: <%= @property_facade.hj_high %> </p>
+    <p class="estimates">Regional Avg: <%= @property_facade.hj_avg %> </p>
+  </div>
+</div>
+
+<div class="client-partnership-indicators">
+  <div class="header-text">
+    <h3><b>Client Partnership Indicators</b></h3>
+  </div>
+  <div class="indicator-details">
+    <p class="field_headers">Enthusiasm: <%= @property_facade.enthusiasm %> </p>
+    <p class="field_headers">Timing: <%= @property_facade.timing %> </p>
+    <p class="field_headers">Adopter Type: <%= @property_facade.adopter_type %> </p>
+    <p class="field_headers">Stage: <%= @property_facade.stage %> </p>
+    <p class="field_headers">Retainer: <%= @property_facade.retainer %> </p>
+  </div>
+</div>
+
+<div class="client-updates">
+  <div class="header-text">
+    <h3><b>Client Updates</b></h3>
+  </div>
+  <div class="update-list">
+    <% @property_facade.updates.each do |update| %>
+      <ul>
+        <li class="update"> <%= update %> </li>
+      </ul>
+    <% end %>
+  </div>
 </div>
 
 <!-- Button trigger modal -->
