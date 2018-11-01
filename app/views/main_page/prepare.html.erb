@@ -2,12 +2,14 @@
   <div class="header-text">
     <h3><b>Client Details</b></h3>
   </div>
-  <p class="field_headers">Name: <%= @property_facade.name %></p>
-  <p class="field_headers">Email: <%= @property_facade.email  %> </p>
-  <p class="field_headers">Phone: <%= @property_facade.phone  %> </p>
-  <p class="field_headers">Opted In: <%= @property_facade.opted_in %> </p>
-  <p class="field_headers">Found Us: <%= @property_facade.found_us %> </p>
-  <p class="field_headers">Map: <a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>
+  <div class="field_headers">
+    <p class="client-name">Name: <%= @property_facade.name %></p>
+    <p class="client-email">Email: <%= @property_facade.email  %> </p>
+    <p class="client-phone">Phone: <%= @property_facade.phone  %> </p>
+    <p class="client-opted-in">Opted In: <%= @property_facade.opted_in %> </p>
+    <p class="client-found-us">Found Us: <%= @property_facade.found_us %> </p>
+    <p class="client-map">Map: <a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>
+  </div>
 </div>
 
 <div class="estimate-types">
