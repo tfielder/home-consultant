@@ -29,19 +29,19 @@
 <div class="collect_form">
 <%= form_tag("/main_page", method: "post") do %>
   <%= label_tag(:about_the_home, "About the Home") %>
-  <%= text_area_tag(:about) %>
+  <%= text_area_tag(:about_this_home) %>
   <%= label_tag(:recommended_price, "Recommended List Price") %>
-  <%= text_field_tag(:recommended_price) %>
+  <%= text_field_tag(:price) %>
   <%= label_tag(:update_enthusiasm, "Update Client Enthusiasm") %>
-  <%= select_tag(:opciones, options_for_select([['mild', 1], ['medium', 2], ['spicy', 3]]))%>
+  <%= select_tag(:client_enthusiasm, options_for_select([['mild', 1], ['medium', 2], ['spicy', 3]]))%>
   <%= label_tag(:buyer_agent_comm, "Buyer Agent Commission") %>
   <%= text_field_tag(:commission) %>
-  <%= label_tag(:about_the_seller, "About the Seller") %>
-  <%= text_area_tag(:about_seller) %>
+  <%= label_tag(:about_seller, "About the Seller") %>
+  <%= text_area_tag(:about_the_seller) %>
   <%= label_tag(:credit_number, "Credit Card Number") %>
-  <%= password_field_tag(:cc_number) %>
+  <%= password_field_tag(:credit_card) %>
   <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
-  <%= month_field(:cc_expiration_month, :cc_expires_year) %>
+  <%= month_field(:exp_date) %>
   <%= submit_tag("Finish") %>
 <% end %>
 </div>
