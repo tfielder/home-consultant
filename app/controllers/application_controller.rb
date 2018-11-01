@@ -4,8 +4,4 @@ class ApplicationController < ActionController::Base
   def auth_token
     session[:user]
   end
-
-  def address
-    session[:address]
-  end
 end
