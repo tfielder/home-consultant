@@ -87,12 +87,12 @@
             <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
             <%= hidden_field_tag(:attributes, "#{@property_facade.attributes}") %>
             <%= month_field(:exp_date, :exp_date_2) %>
-          <% end %>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="log-in-submit" data-dismiss="modal">Close</button>
-        <button type="button" class="log-in-submit" action: "/main_page", method: "post">Save</button>
+        <%= submit_tag('Save', class: 'btn ', style: "color: #96C93D; background-color: #000000; width: 90px; height: 40px; border-radius: 20px;") %>
+         <% end %>
       </div>
     </div>
   </div>
