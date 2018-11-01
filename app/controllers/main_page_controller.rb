@@ -1,7 +1,6 @@
 class MainPageController < ApplicationController
 
   def index
-    @email = params[:user][:address]
   end
 
   def create
