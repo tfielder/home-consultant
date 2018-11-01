@@ -4,7 +4,7 @@ class MainPageController < ApplicationController
   end
 
   def create
-    if params[:address]
+    if params[:address] && ! params[:address].include?('_')
       address = AddressFormatter.new(params[:address]).formatter
       api_call = PropertyService.new(address, auth_token)
       facade_raw_data = api_call.response
@@ -12,6 +12,7 @@ class MainPageController < ApplicationController
       @property_facade = PropertyFacade.new(facade_raw_data)
       render :prepare
     elsif params[:credit_card]
+      binding.pry
       appointment_info = {}
       appointment_info[:consultation] = {
         :address => address,
