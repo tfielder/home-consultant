@@ -1,10 +1,20 @@
-<h1>Pricing Location Address</h1>
+<div class="header-text">
+  <h3><b>Pricing Location Address</b></h3>
+</div>
 
 <div class="location_form">
-<%= form_tag("/main_page", method: "post") do %>
-  <%= label_tag(:location_address, "Location Address") %>
-  <%= text_field_tag(:address) %>
-  <%= hidden_field_tag(:email, "#{@email}") %>
-  <%= submit_tag("Find Location") %>
-<% end %>
+  <%= form_tag("/main_page", method: "post") do %>
+    <div class="label">
+      <%= label_tag(:location_address, "Please fill in the complete address.") %>
+    </div>
+    <div class="input-field">
+      <%= text_field_tag(:address) %>
+    </div>
+    <%= hidden_field_tag(:email, "#{@email}") %>
+    <div class="submit-button">
+      <%= submit_tag("Find Location", class: "find-location-button") %>
+    </div>
+
+    <p class="message"></p>
+  <% end %>
 </div>
