@@ -164,3 +164,21 @@ button[type=button]:focus {
 .button-spacing {
   padding: 50px;
 }
+
+.modal-form {
+  text-align: left;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-title {
+  font-family: 'Questrial', sans-serif;
+}
+
+textarea {
+  display: block;
+  background-color: #d6d6d6;
+  color: black;
+  text-align: left;
+  width: 100%;
+}

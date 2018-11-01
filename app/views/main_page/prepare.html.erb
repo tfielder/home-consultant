@@ -1,67 +1,65 @@
 <div class="find-section">
-  <div class="address_preparation container-fluid">
-    <div class="header-text">
-      <h3><b>Client Details</b></h3>
+  <div class="container-fluid">
+    <div class="address_preparation container-fluid">
+      <div class="header-text">
+        <h3><b>Client Details</b></h3>
+      </div>
+      <div class="field_headers">
+        <p class="client-name">Name: <%= @property_facade.name %></p>
+        <p class="client-email">Email: <%= @property_facade.email  %> </p>
+        <p class="client-phone">Phone: <%= @property_facade.phone  %> </p>
+        <p class="client-opted-in">Opted In: <%= @property_facade.opted_in %> </p>
+        <p class="client-found-us">Found Us: <%= @property_facade.found_us %> </p>
+        <p class="client-map">Map: <a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>
+      </div>
     </div>
-    <div class="field_headers">
-      <p class="client-name">Name: <%= @property_facade.name %></p>
-      <p class="client-email">Email: <%= @property_facade.email  %> </p>
-      <p class="client-phone">Phone: <%= @property_facade.phone  %> </p>
-      <p class="client-opted-in">Opted In: <%= @property_facade.opted_in %> </p>
-      <p class="client-found-us">Found Us: <%= @property_facade.found_us %> </p>
-      <p class="client-map">Map: <a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>
+    <div class="estimate-types container-fluid">
+      <div class="header-text">
+        <h3 class="field_headers"><b>Estimates</b></h3>
+      </div>
+      <div class="zillow-block">
+        <h4 class="estimate_header">Zillow</h4>
+        <p class="estimates">Zestimate: <%= @property_facade.zestimate %> </p>
+        <p class="estimates">Low: <%= @property_facade.z_low %> </p>
+        <p class="estimates">High: <%= @property_facade.z_high %> </p>
+      </div>
+      <div class="home-junction-block">
+        <h4 class="estimate_header">Home Junction</h4>
+        <p class="estimates">Low: <%= @property_facade.hj_low %> </p>
+        <p class="estimates">High: <%= @property_facade.hj_high %> </p>
+        <p class="estimates">Regional Avg: <%= @property_facade.hj_avg %> </p>
+      </div>
     </div>
-  </div>
-
-  <div class="estimate-types container-fluid">
-    <div class="header-text">
-      <h3 class="field_headers"><b>Estimates</b></h3>
+    <div class="client-partnership-indicators container-fluid">
+      <div class="header-text">
+        <h3><b>Client Partnership Indicators</b></h3>
+      </div>
+      <div class="indicator-details">
+        <p class="client-enthusiasm">Enthusiasm: <%= @property_facade.enthusiasm %> </p>
+        <p class="client-timing">Timing: <%= @property_facade.timing %> </p>
+        <p class="client-adopter">Adopter Type: <%= @property_facade.adopter_type %> </p>
+        <p class="client-stage">Stage: <%= @property_facade.stage %> </p>
+        <p class="client-retainer">Retainer: <%= @property_facade.retainer %> </p>
+      </div>
     </div>
-    <div class="zillow-block">
-      <h4 class="estimate_header">Zillow</h4>
-      <p class="estimates">Zestimate: <%= @property_facade.zestimate %> </p>
-      <p class="estimates">Low: <%= @property_facade.z_low %> </p>
-      <p class="estimates">High: <%= @property_facade.z_high %> </p>
+    <div class="client-updates container-fluid">
+      <div class="header-text">
+        <h3><b>Client Updates</b></h3>
+      </div>
+      <div class="update-list">
+        <% @property_facade.updates.each do |update| %>
+          <ul>
+            <p class="update"> <%= update %> </p>
+          </ul>
+        <% end %>
+      </div>
     </div>
-    <div class="home-junction-block">
-      <h4 class="estimate_header">Home Junction</h4>
-      <p class="estimates">Low: <%= @property_facade.hj_low %> </p>
-      <p class="estimates">High: <%= @property_facade.hj_high %> </p>
-      <p class="estimates">Regional Avg: <%= @property_facade.hj_avg %> </p>
+    <!-- Button trigger modal -->
+    <div class="button-spacing">
+      <button type="button" class="start-button" data-toggle="modal" data-target="#exampleModalLong">
+        Start Consultation
+      </button>
     </div>
-  </div>
-
-  <div class="client-partnership-indicators container-fluid">
-    <div class="header-text">
-      <h3><b>Client Partnership Indicators</b></h3>
-    </div>
-    <div class="indicator-details">
-      <p class="client-enthusiasm">Enthusiasm: <%= @property_facade.enthusiasm %> </p>
-      <p class="client-timing">Timing: <%= @property_facade.timing %> </p>
-      <p class="client-adopter">Adopter Type: <%= @property_facade.adopter_type %> </p>
-      <p class="client-stage">Stage: <%= @property_facade.stage %> </p>
-      <p class="client-retainer">Retainer: <%= @property_facade.retainer %> </p>
-    </div>
-  </div>
-
-  <div class="client-updates container-fluid">
-    <div class="header-text">
-      <h3><b>Client Updates</b></h3>
-    </div>
-    <div class="update-list">
-      <% @property_facade.updates.each do |update| %>
-        <ul>
-          <p class="update"> <%= update %> </p>
-        </ul>
-      <% end %>
-    </div>
-  </div>
-
-  <!-- Button trigger modal -->
-  <div class="button-spacing">
-    <button type="button" class="start-button" data-toggle="modal" data-target="#exampleModalLong">
-      Start Consultation
-    </button>
   </div>
 </div>
 
@@ -75,7 +73,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body modal-form">
         <%= form_tag("/main_page", method: "post") do %>
           <%= label_tag(:about_the_home, "About the Home") %>
           <%= text_area_tag(:about) %>
@@ -91,12 +89,11 @@
           <%= password_field_tag(:cc_number) %>
           <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
           <%= month_field(:cc_expiration_month, :cc_expires_year) %>
-          <%= submit_tag("Finish") %>
         <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" action: "/main_page", method: "post">Save changes</button>
       </div>
     </div>
   </div>
