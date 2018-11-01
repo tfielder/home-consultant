@@ -18,11 +18,8 @@ class PropertyFacade
   end
 
   def map
-    array = @attributes[:result][:listing][:coordinates].to_a.flatten
-    lat = array[1]
-    long = array[3]
-    "Lat: #{lat}, Long: #{long}"
-    "https://www.google.com/maps/place/#{lat},#{long}"
+    google_address = @attributes[:result][:listing][:id].gsub(/[_-]/, '+')
+    "https://www.google.com/maps/dir/?api=1&origin=Your+location&destination=#{google_address}"
   end
 
   def opted_in
@@ -43,7 +40,6 @@ class PropertyFacade
 
   def zestimate
     dollars (@attributes[:result][:pricing_estimates][:zillow][:zestimate])
-
   end
 
   def z_low
