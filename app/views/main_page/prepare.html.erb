@@ -97,33 +97,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
 </div>
 
 <div class="collect_form">
-<<<<<<< HEAD
-<%= form_tag("/main_page", method: "post") do %>
-  <%= label_tag(:about_the_home, "About the Home") %>
-  <%= text_area_tag(:about_this_home) %>
-  <%= label_tag(:recommended_price, "Recommended List Price") %>
-  <%= text_field_tag(:price) %>
-  <%= label_tag(:update_enthusiasm, "Update Client Enthusiasm") %>
-  <%= select_tag(:client_enthusiasm, options_for_select([['mild', 1], ['medium', 2], ['spicy', 3]]))%>
-  <%= label_tag(:buyer_agent_comm, "Buyer Agent Commission") %>
-  <%= text_field_tag(:commission) %>
-  <%= label_tag(:about_seller, "About the Seller") %>
-  <%= text_area_tag(:about_the_seller) %>
-  <%= label_tag(:credit_number, "Credit Card Number") %>
-  <%= password_field_tag(:credit_card) %>
-  <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
-  <%= month_field(:exp_date, :exp_date_2) %>
-  <%= submit_tag("Finish") %>
-<% end %>
-</div>
-=======
-
-</div>
->>>>>>> master
