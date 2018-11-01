@@ -74,22 +74,24 @@
         </button>
       </div>
       <div class="modal-body modal-form">
-        <%= form_tag("/main_page", method: "post") do %>
-          <%= label_tag(:about_the_home, "About the Home") %>
-          <%= text_area_tag(:about) %>
-          <%= label_tag(:recommended_price, "Recommended List Price") %>
-          <%= text_field_tag(:recommended_price) %>
-          <%= label_tag(:update_enthusiasm, "Update Client Enthusiasm") %>
-          <%= select_tag(:opciones, options_for_select([['Mild', 1], ['Medium', 2], ['Spicy', 3]]))%>
-          <%= label_tag(:buyer_agent_comm, "Buyer Agent Commission") %>
-          <%= text_field_tag(:commission) %>
-          <%= label_tag(:about_the_seller, "About the Seller") %>
-          <%= text_area_tag(:about_seller) %>
-          <%= label_tag(:credit_number, "Credit Card Number") %>
-          <%= password_field_tag(:cc_number) %>
-          <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
-          <%= month_field(:cc_expiration_month, :cc_expires_year) %>
-        <% end %>
+        <div class="collect-data">
+          <%= form_tag("/main_page", method: "post") do %>
+            <%= label_tag(:about_the_home, "About the Home") %>
+            <%= text_area_tag(:about) %>
+            <%= label_tag(:recommended_price, "Recommended List Price") %>
+            <%= text_field_tag(:recommended_price) %>
+            <%= label_tag(:update_enthusiasm, "Update Client Enthusiasm") %>
+            <%= select_tag(:opciones, options_for_select([['Mild', 1], ['Medium', 2], ['Spicy', 3]]))%>
+            <%= label_tag(:buyer_agent_comm, "Buyer Agent Commission") %>
+            <%= text_field_tag(:commission) %>
+            <%= label_tag(:about_the_seller, "About the Seller") %>
+            <%= text_area_tag(:about_seller) %>
+            <%= label_tag(:credit_number, "Credit Card Number") %>
+            <%= password_field_tag(:cc_number) %>
+            <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
+            <%= month_field(:cc_expiration_month, :cc_expires_year) %>
+          <% end %>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
