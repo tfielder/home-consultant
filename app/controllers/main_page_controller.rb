@@ -11,8 +11,7 @@ class MainPageController < ApplicationController
       facade_raw_data = JSON.parse(facade_raw_data.to_json, symbolize_names: true)
       @property_facade = PropertyFacade.new(facade_raw_data)
       render :prepare
-    end
-    if params[:credit_card]
+    elsif params[:credit_card]
       appointment_info = {}
       appointment_info[:consultation] = {
         :address => address,
@@ -28,6 +27,9 @@ class MainPageController < ApplicationController
       facade_raw_data = eval(params["attributes"])
       @property_facade = PropertyFacade.new(facade_raw_data)
       render :prepare
+    else
+      flash.now[:error] = "That address does not exist/is incomplete. Please try again."
+      render :index
     end
   end
 end
