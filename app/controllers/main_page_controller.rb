@@ -6,7 +6,6 @@ class MainPageController < ApplicationController
 
   def create
     if params[:address]
-      binding.pry
       address = AddressFormatter.new(params[:address]).formatter
       api_call = PropertyService.new(address, auth_token)
       facade_raw_data = api_call.response
