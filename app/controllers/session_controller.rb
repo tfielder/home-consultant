@@ -6,6 +6,7 @@ class SessionController < ApplicationController
     result = MembersService.new(params[:user][:address], params[:password])
     if result.success
       session[:user] = result.success
+      session[:email] = params[:user][:address]
       redirect_to '/main_page'
     else
       flash.now[:error] = result.error

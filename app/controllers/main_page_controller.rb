@@ -6,26 +6,28 @@ class MainPageController < ApplicationController
 
   def create
     if params[:address]
-      address = AddressFormatter.new(params[:address]).formatter
+      session[:address] = AddressFormatter.new(params[:address]).formatter
       api_call = PropertyService.new(address, auth_token)
-      @property_facade = PropertyFacade.new(api_call.response)
+      session[:property_facade] = PropertyFacade.new(api_call.response)
+      @property_facade = property_facade
+      render :prepare
     end
-    if params[:about]
+    if params[:about_this_home]
       appointment_info = {}
       appointment_info[:consultation] = {
-        :address => params[:address],
+        :address => address,
         :about_this_home => params[:about_this_home],
         :client_enthusiasm => params[:client_enthusiasm],
         :commission => params[:commission],
         :about_the_seller => params[:about_the_seller],
         :credit_card => params[:credit_card],
-        :exp_date => params[:exp_date],
+        :exp_date => params[:exp_date][:exp_date_2],
         :price => params[:price]
       }
-      binding.pry
       AppointmentCollector.new(appointment_info, auth_token, email)
-      #need email as a helper
+      attributes = JSON.parse(property_facade.to_json, symbolize_names: true)
+      @property_facade = PropertyFacade.new(attributes[:attributes])
+      render :prepare
     end
-    render :prepare
   end
 end

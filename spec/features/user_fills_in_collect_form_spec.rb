@@ -31,5 +31,19 @@ describe 'as a user' do
       expect(page).to have_content('Credit Card Expiration Date')
       expect(page).to have_content('Finish')
     end
+    it 'allows user to fill in the collect form' do
+      fill_in :about_this_home, with: "1"
+      fill_in :price, with: "2"
+      fill_in :commission, with: "3"
+      fill_in :about_the_seller, with: "4"
+      fill_in :credit_card, with: "5"
+
+      VCR.use_cassette("submit a collection form") do
+      click_on "Finish"
+      end
+
+      expect(current_path).to eq(main_page_index_path)
+      expect(page).to have_content("Name: Tyler")
+    end
   end
 end
