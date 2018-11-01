@@ -42,6 +42,7 @@
   <%= password_field_tag(:credit_card) %>
   <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
   <%= month_field(:exp_date, :exp_date_2) %>
+  <%= hidden_field_tag(:attributes, "#{@property_facade.attributes}") %>
   <%= submit_tag("Finish") %>
 <% end %>
 </div>

@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     if result.success
       session[:user] = result.success
       session[:email] = params[:user][:address]
-      redirect_to '/main_page'
+      redirect_to main_page_index_path(request.parameters)
     else
       flash.now[:error] = result.error
       render :new

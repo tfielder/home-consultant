@@ -1,15 +1,16 @@
 class MainPageController < ApplicationController
 
-  def search
-
+  def index
+    @email = params[:user][:address]
   end
 
   def create
     if params[:address]
-      session[:address] = AddressFormatter.new(params[:address]).formatter
+      address = AddressFormatter.new(params[:address]).formatter
       api_call = PropertyService.new(address, auth_token)
-      session[:property_facade] = PropertyFacade.new(api_call.response)
-      @property_facade = property_facade
+      facade_raw_data = api_call.response
+      facade_raw_data = JSON.parse(facade_raw_data.to_json, symbolize_names: true)
+      @property_facade = PropertyFacade.new(facade_raw_data)
       render :prepare
     end
     if params[:credit_card]
@@ -24,9 +25,11 @@ class MainPageController < ApplicationController
         :exp_date => params[:exp_date][:exp_date_2],
         :price => params[:price]
       }
-      AppointmentCollector.new(appointment_info, auth_token, email)
-      @property_facade = property_facade
+      AppointmentCollector.new(appointment_info, auth_token, params[:email])
+      facade_raw_data = eval(params["attributes"])
+      @property_facade = PropertyFacade.new(facade_raw_data)
       render :prepare
     end
+
   end
 end
