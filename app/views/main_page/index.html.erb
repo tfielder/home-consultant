@@ -10,6 +10,7 @@
     <div class="input-field">
       <%= text_field_tag(:address) %>
     </div>
+    <%= hidden_field_tag(:email, "#{@email}") %>
     <div class="submit-button">
       <%= submit_tag("Find Location", class: "find-location-button") %>
     </div>
