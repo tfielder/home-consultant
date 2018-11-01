@@ -1,7 +1,6 @@
 class MainPageController < ApplicationController
 
   def search
-
   end
 
   def create
@@ -11,6 +10,7 @@ class MainPageController < ApplicationController
       @property_facade = PropertyFacade.new(api_call.response)
     else
       flash.now[:error] = "That address does not exist/is incomplete. Please try again."
+      render :index
     end
     render :prepare
   end
