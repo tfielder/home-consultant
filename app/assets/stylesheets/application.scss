@@ -116,7 +116,6 @@ button[type=button]:focus {
   border-radius: 20px;
 }
 
-
 .zoom {
   transition: transform .2s;
 }
@@ -138,11 +137,51 @@ button[type=button]:focus {
 }
 
 .field_headers {
+  text-align: left;
+  background-color: black;
+  border: 2px solid black;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  opacity: .7;
+  border-radius: 5px;
+}
+
+.estimate-block {
+  text-align: left;
+  background-color: black;
+  border: 2px solid black;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  opacity: .65;
+  border-radius: 5px;
+}
+
+.estimate_header {
   text-align: center;
 }
 
 .indicator-details {
-  text-align: center;
+  text-align: left;
+  background-color: black;
+  border: 2px solid black;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  opacity: .7;
+  border-radius: 5px;
+}
+
+.update-list {
+  text-align: left;
+  background-color: black;
+  border: 2px solid black;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  opacity: .7;
+  border-radius: 5px;
 }
 
 .estimate-types {
@@ -186,4 +225,15 @@ textarea {
   color: black;
   text-align: left;
   width: 100%;
+}
+
+.display-block {
+  display: block;
+}
+
+#opciones {
+  background-color: #000000;
+  color: #96C93D;
+  border-radius: 15px;
+  text-align: center;
 }
