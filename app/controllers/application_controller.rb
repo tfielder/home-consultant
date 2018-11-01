@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def property_facade
-    # session[:property_facade]
     atts = JSON.parse(session[:property_facade].to_json, symbolize_names: true)
     PropertyFacade.new(atts[:attributes])
   end
