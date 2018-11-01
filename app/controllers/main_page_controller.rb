@@ -12,7 +12,7 @@ class MainPageController < ApplicationController
       @property_facade = property_facade
       render :prepare
     end
-    if params[:about_this_home]
+    if params[:credit_card]
       appointment_info = {}
       appointment_info[:consultation] = {
         :address => address,
@@ -25,8 +25,7 @@ class MainPageController < ApplicationController
         :price => params[:price]
       }
       AppointmentCollector.new(appointment_info, auth_token, email)
-      attributes = JSON.parse(property_facade.to_json, symbolize_names: true)
-      @property_facade = PropertyFacade.new(attributes[:attributes])
+      @property_facade = property_facade
       render :prepare
     end
   end
