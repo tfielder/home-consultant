@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class PropertyFacade
   attr_reader :name, :attributes
 
@@ -23,13 +25,8 @@ class PropertyFacade
   end
 
   def zillow_link
-    zillow_address = @attributes[:result][:listing][:id]
-    split = zillow_address.partition('-')
-    first_part = split[0].gsub(/_/,'+')
-    second_part = split[2].partition('-')
-    city = second_part[0]
-    state = second_part[2].partition('-')[0]
-    "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=#{ENV[ZWSID]}&address=#{first_part}&citystatezip=#{city}%2C+#{state}"
+    zillow_address = @attributes[:result][:listing][:id].gsub(/_/,'-')
+    "https://www.zillow.com/homes/#{zillow_address}_rb/"
   end
 
   def opted_in

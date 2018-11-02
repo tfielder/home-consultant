@@ -2,7 +2,6 @@
   <div class="container-fluid">
     <div class="address_preparation container-fluid">
       <div class="header-text">
-        <%= binding.pry %>
         <h3><b>Client Details</b></h3>
       </div>
       <div class="field_headers">
@@ -61,7 +60,7 @@
         <h3><b>Estimates</b></h3>
       </div>
       <div class="estimate-block">
-        <h4 class="estimate_header"><b><a href="https://www.zillow.com">Zillow</a></b></h4>
+        <h4 class="estimate_header"><b><a href="<%= @property_facade.zillow_link %>">Zillow</a></b></h4>
         <div class="row">
           <div class="col-4">
             <p><b>Zestimate: </b></p>
