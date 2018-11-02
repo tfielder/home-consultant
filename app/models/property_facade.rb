@@ -22,6 +22,16 @@ class PropertyFacade
     "https://www.google.com/maps/dir/?api=1&origin=Your+location&destination=#{google_address}"
   end
 
+  def zillow_link
+    zillow_address = @attributes[:result][:listing][:id]
+    split = zillow_address.partition('-')
+    first_part = split[0].gsub(/_/,'+')
+    second_part = split[2].partition('-')
+    city = second_part[0]
+    state = second_part[2].partition('-')[0]
+    "http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=#{ENV[ZWSID]}&address=#{first_part}&citystatezip=#{city}%2C+#{state}"
+  end
+
   def opted_in
     if @attributes[:result][:client][:opted_in][:result]
       "Yes"
