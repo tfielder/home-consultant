@@ -52,7 +52,7 @@
     </div>
     <!-- Button trigger modal -->
     <div class="button-spacing">
-      <button type="button" class="start-button" data-toggle="modal" data-target="#exampleModalLong">
+      <button type="button" id="start_timer" class="start-button" data-toggle="modal" data-target="#exampleModalLong" onclick="startTimer()">
         Start Consultation
       </button>
     </div>
@@ -87,11 +87,13 @@
             <%= label_tag(:credit_expiration, "Credit Card Expiration Date") %>
             <%= hidden_field_tag(:attributes, "#{@property_facade.attributes}") %>
             <%= month_field(:exp_date, :exp_date_2) %>
+            <%= hidden_field_tag :start_time %>
+            <%= hidden_field_tag :end_time %>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="log-in-submit" data-dismiss="modal">Close</button>
-        <%= submit_tag('Save', class: 'btn ', style: "color: #96C93D; background-color: #000000; width: 90px; height: 40px; border-radius: 20px;") %>
+        <%= submit_tag('Save',id: "stop_timer", onclick: "stopTimer()", class: 'btn ', style: "color: #96C93D; background-color: #000000; width: 90px; height: 40px; border-radius: 20px;") %>
          <% end %>
       </div>
     </div>
@@ -99,3 +101,13 @@
 </div>
 
 <div class="collect_form">
+<script type="text/javascript">
+function startTimer() {
+ var startTime = Date.now()
+      $("#start_time").val(startTime);
+}
+function stopTimer() {
+  var endTime = Date.now()
+  $("#end_time").val(endTime)
+}
+</script>
