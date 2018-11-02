@@ -226,6 +226,12 @@ textarea {
   color: black;
   text-align: left;
   width: 100%;
+  outline: none;
+}
+
+textarea :focus {
+  outline: none;
+  border: 2px solid #96C93D;
 }
 
 .display-block {
