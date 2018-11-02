@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class PropertyFacade
   attr_reader :name, :attributes
 
@@ -20,6 +22,11 @@ class PropertyFacade
   def map
     google_address = @attributes[:result][:listing][:id].gsub(/[_-]/, '+')
     "https://www.google.com/maps/dir/?api=1&origin=Your+location&destination=#{google_address}"
+  end
+
+  def zillow_link
+    zillow_address = @attributes[:result][:listing][:id].gsub(/_/,'-')
+    "https://www.zillow.com/homes/#{zillow_address}_rb/"
   end
 
   def opted_in
