@@ -44,7 +44,7 @@ describe 'as a user' do
       end
 
       expect(current_path).to eq(main_page_index_path)
-      expect(page).to have_content("Name: Tyler")
+      expect(page).to have_content("Name:")
     end
   end
 end
