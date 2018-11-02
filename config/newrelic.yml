@@ -3,7 +3,7 @@
 # .NET, PHP, Python, Node, and Go applications with deep visibility and low
 # overhead.  For more information, visit www.newrelic.com.
 #
-# Generated November 01, 2018
+# Generated November 02, 2018
 #
 # This configuration file is custom generated for n/a_3472
 #
@@ -12,10 +12,11 @@
 
 common: &default_settings
   # Required license key associated with your New Relic account.
-  license_key: ENV['NEW_RELIC_KEY']
+  license_key: eu01xx7a0c85e225bd7265d5048abd9baeccb32e
+
   # Your application name. Renaming here affects where data displays in New
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
-  app_name: TRELORA Home
+  app_name: trelora
 
   # To disable the agent regardless of other settings, uncomment the following:
   # agent_enabled: false
