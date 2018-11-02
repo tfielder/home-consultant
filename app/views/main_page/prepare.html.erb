@@ -2,15 +2,58 @@
   <div class="container-fluid">
     <div class="address_preparation container-fluid">
       <div class="header-text">
+        <%= binding.pry %>
         <h3><b>Client Details</b></h3>
       </div>
       <div class="field_headers">
-        <p class="client-name"><b>Name: </b><%= @property_facade.name %></p>
-        <p class="client-email"><b>Email: </b><%= @property_facade.email  %> </p>
-        <p class="client-phone"><b>Phone: </b><%= @property_facade.phone  %> </p>
-        <p class="client-opted-in"><b>Opted In: </b><%= @property_facade.opted_in %> </p>
-        <p class="client-found-us"><b>Found Us: </b><%= @property_facade.found_us %> </p>
-        <p class="client-map"><b>Map: </b><a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Name: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.name %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Email: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= mail_to @property_facade.email  %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Phone: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= link_to @property_facade.phone, "tel:#{@property_facade.phone}"  %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Opted In: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.opted_in %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Found Us: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.found_us %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Map: </b></p>
+          </div>
+          <div class="col-8">
+            <p><a href="<%= @property_facade.map %>">Click for Directions to Property</a></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="estimate-types container-fluid">
@@ -18,14 +61,56 @@
         <h3><b>Estimates</b></h3>
       </div>
       <div class="estimate-block">
-        <h4 class="estimate_header"><b><a href="<%= @property_facade.zillow_link %>">Zillow</a></b></h4>
-        <p class="estimates"><b>Zestimate: </b><%= @property_facade.zestimate %> </p>
-        <p class="estimates"><b>Low: </b><%= @property_facade.z_low %> </p>
-        <p class="estimates"><b>High: </b><%= @property_facade.z_high %> </p>
+        <h4 class="estimate_header"><b><a href="https://www.zillow.com">Zillow</a></b></h4>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Zestimate: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.zestimate %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Low: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.z_low %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>High: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.z_high %></p>
+          </div>
+        </div>
         <h4 class="estimate_header"><b>Home Junction</b></h4>
-        <p class="estimates"><b>Low: </b><%= @property_facade.hj_low %> </p>
-        <p class="estimates"><b>High: </b><%= @property_facade.hj_high %> </p>
-        <p class="estimates"><b>Regional Avg: </b><%= @property_facade.hj_avg %> </p>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Low: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.hj_low %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>High: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.hj_high %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Regional Avg: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.hj_avg %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="client-partnership-indicators container-fluid">
@@ -33,11 +118,46 @@
         <h3><b>Client Partnership Indicators</b></h3>
       </div>
       <div class="indicator-details">
-        <p class="client-enthusiasm"><b>Enthusiasm: </b><%= @property_facade.enthusiasm %> </p>
-        <p class="client-timing"><b>Timing: </b><%= @property_facade.timing %> </p>
-        <p class="client-adopter"><b>Adopter Type: </b><%= @property_facade.adopter_type %> </p>
-        <p class="client-stage"><b>Stage: </b><%= @property_facade.stage %> </p>
-        <p class="client-retainer"><b>Retainer: </b><%= @property_facade.retainer %> </p>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Enthusiasm: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.enthusiasm %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Timing: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.timing %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Adopter Type: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.adopter_type %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Stage: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.stage %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Retainer: </b></p>
+          </div>
+          <div class="col-8">
+            <p>$<%= @property_facade.retainer %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="client-updates container-fluid">
@@ -57,6 +177,10 @@
       </button>
     </div>
   </div>
+</div>
+
+<div class="logout">
+  <%= link_to "Log Out", sessions_path, method: 'post', class: "log-out-button" %>
 </div>
 
 <!-- Modal -->
@@ -92,8 +216,9 @@
         </div>
       </div>
       <div class="modal-footer">
+        <p class="message"></p>
         <button type="button" class="log-in-submit" data-dismiss="modal">Close</button>
-        <%= submit_tag('Save',id: "stop_timer", onclick: "stopTimer()", class: 'btn ', style: "color: #96C93D; background-color: #000000; width: 90px; height: 40px; border-radius: 20px;") %>
+        <%= submit_tag('Save',id: "stop_timer", onclick: "stopTimer()", class: 'btn save-button', style: "color: #96C93D; background-color: #000000; width: 90px; height: 40px; border-radius: 20px;") %>
          <% end %>
       </div>
     </div>

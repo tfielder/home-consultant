@@ -14,7 +14,7 @@ class PropertyFacade
   end
 
   def phone
-    @attributes[:result][:client][:client_info][:phone].insert(0, '(').insert(4, ')').insert(8, '-')
+    @attributes[:result][:client][:client_info][:phone]
   end
 
   def map

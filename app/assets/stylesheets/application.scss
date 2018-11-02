@@ -11,6 +11,10 @@ html, body {
   height: 100%;
 }
 
+a {
+  color:inherit;
+}
+
 .message {
   color: red;
   margin-top: 15px;
@@ -159,7 +163,8 @@ button[type=button]:focus {
 }
 
 .estimate_header {
-  text-align: center;
+  text-align: left;
+  color: #96C93D;
 }
 
 .indicator-details {
@@ -225,6 +230,12 @@ textarea {
   color: black;
   text-align: left;
   width: 100%;
+  outline: none;
+}
+
+textarea :focus {
+  outline: none;
+  border: 2px solid #96C93D;
 }
 
 .display-block {
@@ -236,4 +247,20 @@ textarea {
   color: #96C93D;
   border-radius: 15px;
   text-align: center;
+}
+
+.log-out-button {
+  color: #96C93D;
+  background-color: #000000;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  padding: 10px;
+  top: 80%
+}
+
+.logout {
+  text-align: center;
+  padding: 30px;
+  top: 80%
 }

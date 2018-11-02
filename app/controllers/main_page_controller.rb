@@ -1,4 +1,5 @@
 class MainPageController < ApplicationController
+  before_action :check_login
 
   def index
   end
@@ -32,5 +33,10 @@ class MainPageController < ApplicationController
       flash.now[:error] = "That address does not exist/is incomplete. Please try again."
       render :index
     end
+  end
+  private
+
+  def check_login
+    redirect_to '/' unless session[:user]
   end
 end
