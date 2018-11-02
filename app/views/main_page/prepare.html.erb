@@ -61,13 +61,55 @@
       </div>
       <div class="estimate-block">
         <h4 class="estimate_header"><b>Zillow</b></h4>
-        <p class="estimates"><b>Zestimate: </b><%= @property_facade.zestimate %> </p>
-        <p class="estimates"><b>Low: </b><%= @property_facade.z_low %> </p>
-        <p class="estimates"><b>High: </b><%= @property_facade.z_high %> </p>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Zestimate: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.zestimate %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Low: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.z_low %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>High: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.z_high %></p>
+          </div>
+        </div>
         <h4 class="estimate_header"><b>Home Junction</b></h4>
-        <p class="estimates"><b>Low: </b><%= @property_facade.hj_low %> </p>
-        <p class="estimates"><b>High: </b><%= @property_facade.hj_high %> </p>
-        <p class="estimates"><b>Regional Avg: </b><%= @property_facade.hj_avg %> </p>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Low: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.hj_low %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>High: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.hj_high %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Regional Avg: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.hj_avg %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="client-partnership-indicators container-fluid">
@@ -75,11 +117,46 @@
         <h3><b>Client Partnership Indicators</b></h3>
       </div>
       <div class="indicator-details">
-        <p class="client-enthusiasm"><b>Enthusiasm: </b><%= @property_facade.enthusiasm %> </p>
-        <p class="client-timing"><b>Timing: </b><%= @property_facade.timing %> </p>
-        <p class="client-adopter"><b>Adopter Type: </b><%= @property_facade.adopter_type %> </p>
-        <p class="client-stage"><b>Stage: </b><%= @property_facade.stage %> </p>
-        <p class="client-retainer"><b>Retainer: </b><%= @property_facade.retainer %> </p>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Enthusiasm: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.enthusiasm %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Timing: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.timing %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Adopter Type: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.adopter_type %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Stage: </b></p>
+          </div>
+          <div class="col-8">
+            <p><%= @property_facade.stage %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <p><b>Retainer: </b></p>
+          </div>
+          <div class="col-8">
+            <p>$<%= @property_facade.retainer %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="client-updates container-fluid">
