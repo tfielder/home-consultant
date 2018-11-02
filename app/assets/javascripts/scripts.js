@@ -74,3 +74,41 @@ $(document).ready(function() {
     } else {}
   });
 });
+
+//
+// Validation function for consultation form
+//
+
+$(document).ready(function() {
+  $('.save-button').on('click', function () {
+    var homeInputElement = $('#about_this_home')
+    var priceInputElement = $('#price')
+    var commissionInputElement = $('#commission')
+    var sellerInputElement = $('#about_the_seller')
+    var creditCardInputElement = $('#credit_card')
+    var expDateInputElement = $('#exp_date_exp_date_2')
+
+    const invalidFieldMessage = "Please fill in the selected field."
+
+    function setInvalidCSS(element) {
+      $(element).css({"border-color": "red"})
+    }
+
+    function setMessage(message) {
+      $('.message').text(message);
+    }
+     if (homeInputElement.val() === '') {
+     setInvalidCSS(homeInputElement)
+     setMessage(invalidFieldMessage)
+     event.preventDefault();
+   } else if (priceInputElement.val() === '') {
+     setInvalidCSS(priceInputElement)
+     setMessage(invalidFieldMessage)
+     event.preventDefault();
+   } else if (commissionInputElement.val() === '') {
+     setInvalidCSS(commissionInputElement)
+     setMessage(invalidFieldMessage)
+     event.preventDefault();
+   }else {}
+  });
+});
