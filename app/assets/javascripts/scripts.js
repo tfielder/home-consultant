@@ -97,6 +97,7 @@ $(document).ready(function() {
     function setMessage(message) {
       $('.message').text(message);
     }
+
      if (homeInputElement.val() === '') {
      setInvalidCSS(homeInputElement)
      setMessage(invalidFieldMessage)
@@ -109,6 +110,18 @@ $(document).ready(function() {
      setInvalidCSS(commissionInputElement)
      setMessage(invalidFieldMessage)
      event.preventDefault();
-   }else {}
+   } else if (sellerInputElement.val() === '') {
+     setInvalidCSS(sellerInputElement)
+     setMessage(invalidFieldMessage)
+     event.preventDefault();
+   } else if (creditCardInputElement.val() === '') {
+     setInvalidCSS(creditCardInputElement)
+     setMessage(invalidFieldMessage)
+     event.preventDefault();
+   } else if (expDateInputElement.val() === '') {
+     setInvalidCSS(expDateInputElement)
+     setMessage(invalidFieldMessage)
+     event.preventDefault();
+   } else {}
   });
 });
