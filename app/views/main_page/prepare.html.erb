@@ -6,8 +6,8 @@
       </div>
       <div class="field_headers">
         <p class="client-name"><b>Name: </b><%= @property_facade.name %></p>
-        <p class="client-email"><b>Email: </b><%= @property_facade.email  %> </p>
-        <p class="client-phone"><b>Phone: </b><%= @property_facade.phone  %> </p>
+        <p class="client-email"><b>Email: </b><%= mail_to @property_facade.email  %> </p>
+        <p class="client-phone"><b>Phone: </b><%= link_to @property_facade.phone, "tel:#{@property_facade.phone}"  %> </p>
         <p class="client-opted-in"><b>Opted In: </b><%= @property_facade.opted_in %> </p>
         <p class="client-found-us"><b>Found Us: </b><%= @property_facade.found_us %> </p>
         <p class="client-map"><b>Map: </b><a href="<%= @property_facade.map %>">Click for Directions to Property</a> </p>

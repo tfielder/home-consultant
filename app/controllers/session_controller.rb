@@ -1,9 +1,14 @@
 class SessionController < ApplicationController
-  before_action :check_login
   def new
   end
 
+  def destroy
+    session[:user] = nil
+    redirect_to '/'
+  end
+
   def create
+    check_login
     result = MembersService.new(params[:user][:address], params[:password])
     if result.success
       session[:user] = result.success
@@ -14,6 +19,8 @@ class SessionController < ApplicationController
       render :new
     end
   end
+
+
 
   private
   def check_login
