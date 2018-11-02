@@ -12,9 +12,7 @@ class MainPageController < ApplicationController
       @property_facade = PropertyFacade.new(facade_raw_data)
       render :prepare
     elsif params[:credit_card]
-      binding.pry
-      appointment_info = {}
-      appointment_info[:consultation] = {
+      appointment_info = {consultation: {
         :address => address,
         :about_this_home => params[:about_this_home],
         :client_enthusiasm => params[:client_enthusiasm],
@@ -22,8 +20,10 @@ class MainPageController < ApplicationController
         :about_the_seller => params[:about_the_seller],
         :credit_card => params[:credit_card],
         :exp_date => params[:exp_date][:exp_date_2],
-        :price => params[:price]
-      }
+        :price => params[:price],
+        :start_time => params[:start_time],
+        :end_time => params[:end_time]
+      }}
       AppointmentCollector.new(appointment_info, auth_token, params[:email])
       facade_raw_data = eval(params["attributes"])
       @property_facade = PropertyFacade.new(facade_raw_data)
