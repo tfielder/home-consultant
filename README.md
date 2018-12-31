@@ -3,6 +3,8 @@
 
 #### View the results of this project on Heroku: [Home Consultant](https://trelora-home.herokuapp.com/)
 
+* To log in, use the email: 'steven@trel.co' and the password: 'password'.
+
 This [project](https://trelora-home.herokuapp.com/) was submitted as the second Module 3 group project at the Turing School of Software and Design. Designed to function as an introduction to interacting with an external API, students are expected to appropriately utilize POST requests, create API services and micro-services, develop adequate MVC architecture, and render the results of their queries using JQuery and JavaScript.
 
 ## Introduction and Function
