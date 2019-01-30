@@ -1,11 +1,11 @@
 # README
 
 
-#### View the results of this project on Heroku: [Home Consultant](https://trelora-home.herokuapp.com/)
+#### View the results of this project on Heroku: [Home Consultant](https://trelora-consulting.herokuapp.com/)
 
 * To log in, use the email: 'steven@trel.co' and the password: 'password'.
 
-This [project](https://trelora-home.herokuapp.com/) was submitted as the second Module 3 group project at the Turing School of Software and Design. Designed to function as an introduction to interacting with an external API, students are expected to appropriately utilize POST requests, create API services and micro-services, develop adequate MVC architecture, and render the results of their queries using JQuery and JavaScript.
+This [project](https://trelora-consulting.herokuapp.com/) was submitted as the second Module 3 group project at the Turing School of Software and Design. Designed to function as an introduction to interacting with an external API, students are expected to appropriately utilize POST requests, create API services and micro-services, develop adequate MVC architecture, and render the results of their queries using JQuery and JavaScript.
 
 ## Introduction and Function
 
@@ -19,7 +19,7 @@ Home Consultant is designed to be a single page app that guides the agent throug
 
 ## Setup and Implementation
 
-* Change into new directory, and run "git clone https://github.com/patrickshobe/home-consultant"
+* Change into new directory, and run "git clone https://github.com/tfielder/home-consultant"
 * Run rake db:reset
 * Run rake db:migrate
 * Run bundle/bundle update
@@ -27,7 +27,7 @@ Home Consultant is designed to be a single page app that guides the agent throug
 
 ## Demo app 
 
-* Visit app at https://trelora-home.herokuapp.com/
+* Visit app at https://trelora-consulting.herokuapp.com/
 * Demo user email: `steven@trel.co`
 * Demo user password: `password`
 * Demo address: `1860 South Marion St Denver CO 80210`
