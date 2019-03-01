@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   def new
+    session[:user] = nil
   end
 
   def destroy
