@@ -9,13 +9,13 @@ This [project](https://trelora-home.herokuapp.com/) was submitted as the second 
 
 ## Introduction and Function
 
-Home Consultant was designed to serve as a home consultation tool prototype for TRELORA, a Denver-based real estate brokerage. By partnering with the Turing School of Software and Design, TRELORA has provided a valuable learning experience for Module 3 students. Our team seeks to present a sleek and fast mobile app that helps TRELORA agents cut down on time spent on data entry, making efficient use of their consultations. 
+Home Consultant was designed to serve as a home consultation tool prototype for TRELORA, a Denver-based real estate brokerage. By partnering with the Turing School of Software and Design, TRELORA has provided a valuable learning experience for Module 3 students. Our team seeks to present a sleek and fast mobile app that helps TRELORA agents cut down on time spent on data entry, making efficient use of their consultations.
 
 The app retrieves data from an API setup through TRELORA. The property information page has a link that shows google map directions and traffic from their current location. Also by clicking on "Zillow' the Home Agent will see the property page on Zillow. When agent clicks 'Start Consultation', a timestamp will be recorded and another timestamp will be recorded at the end. The consultation information along with time stamps is sent to TRELORA when the Home Agent clicks 'Save'.  
 
 ## Design and Architecture
 
-Home Consultant is designed to be a single page app that guides the agent through the consulting process, from preparation to review. Original designs involved a tab structure, but the team determined to move away from that format. On a backend level, the architecture is relatively streamlined. 
+Home Consultant is designed to be a single page app that guides the agent through the consulting process, from preparation to review. Original designs involved a tab structure, but the team determined to move away from that format. On a backend level, the architecture is relatively streamlined.
 
 ## Setup and Implementation
 
@@ -25,7 +25,7 @@ Home Consultant is designed to be a single page app that guides the agent throug
 * Run bundle/bundle update
 * Run rspec to ensure that all tests are passing
 
-## Demo app 
+## Demo app
 
 * Visit app at https://trelora-home.herokuapp.com/
 * Demo user email: `steven@trel.co`
@@ -47,6 +47,9 @@ Home Consultant is designed to be a single page app that guides the agent throug
 * [SimpleCov](https://github.com/colszowka/simplecov)
 * [VCR](https://relishapp.com/vcr/vcr/docs)
 * [Webmock](https://github.com/bblimke/webmock)
+
+## Backend-API
+The backend API can be found here: `https://github.com/tfielder/Trelora_API`
 
 ### Contributors
 
